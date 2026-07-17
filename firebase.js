@@ -5,23 +5,14 @@ import { getDatabase, ref, push, set } from "firebase/database";
 
 
 const firebaseConfig = {
-
-apiKey:"...",
-
-authDomain:"...",
-
-databaseURL:"https://carta-amor-d1cff-default-rtdb.firebaseio.com",
-
-projectId:"carta-amor-d1cff",
-
-storageBucket:"carta-amor-d1cff.firebasestorage.app",
-
-messagingSenderId:"852809289289",
-
-appId:"...",
-
-measurementId:"..."
-
+  apiKey: "TU_API_KEY_REAL",
+  authDomain: "carta-amor-d1cff.firebaseapp.com",
+  databaseURL: "https://carta-amor-d1cff-default-rtdb.firebaseio.com",
+  projectId: "carta-amor-d1cff",
+  storageBucket: "carta-amor-d1cff.firebasestorage.app",
+  messagingSenderId: "852809289289",
+  appId: "TU_APP_ID_REAL",
+  measurementId: "G-JCDCZHZQ81"
 };
 
 
