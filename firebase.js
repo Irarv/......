@@ -4,93 +4,18 @@ import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/
 
 const firebaseConfig = {
   apiKey: "TU_API_KEY",
-  authDomain: "TU_PROYECTO.firebaseapp.com",
-  databaseURL: "https://TU_PROYECTO-default-rtdb.firebaseio.com",
-  projectId: "TU_PROYECTO",
+  authDomain: "TU_AUTHDOMAIN",
+  databaseURL: "TU_DATABASE_URL",
+  projectId: "TU_PROJECT_ID",
 };
 
 
 const app = initializeApp(firebaseConfig);
+
 const db = getDatabase(app);
 
 
-
-document.getElementById("guardar").addEventListener("click", ()=>{
-
-
-    let comentario = document.getElementById("comentario").value;
-
-
-    const nuevo = push(ref(db,"comentarios"));
-
-
-    set(nuevo,{
-        texto: comentario,
-        fecha: new Date().toISOString()
-    })
-    .then(()=>{
-        console.log("Guardado correctamente");
-    })
-    .catch((error)=>{
-        console.log("ERROR:",error);
-    });
-
-
-});
-
-}
-
-
-
-
-window.guardarComentario = async function(){
-
-
-let texto=document.getElementById("comentario").value;
-
-
-if(texto.trim()==""){
-
-alert("Escribe un mensaje ❤️");
-
-return;
-
-}
-
-
-
-try{
-
-
-const referencia=push(ref(db,"comentarios"));
-
-
-await set(referencia,{
-
-mensaje:texto,
-
-fecha:new Date().toLocaleString()
-
-});
-
-
-
-document.getElementById("comentario").value="";
-
-
-alert("Mensaje guardado 💌");
-
-
-console.log("Comentario guardado");
-
-
-}catch(error){
-
-
-console.error(error);
-
-
-}
-
-
-}
+window.db = db;
+window.ref = ref;
+window.push = push;
+window.set = set;
