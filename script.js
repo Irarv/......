@@ -47,10 +47,11 @@ window.guardarComentario = async function(){
 
         alert("Mensaje guardado 💌");
 
-    }catch(error){
+}catch(error){
 
-        console.error(error);
-        alert(error.message);
+    console.error(error);
+    alert(error.message);
 
+}
 
 }
