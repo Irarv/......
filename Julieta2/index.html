@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Una carta para ti ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="escena">
+
+
+<div class="sobre" id="sobre">
+
+<div class="tapa"></div>
+
+<div class="sello" id="sello">
+❤️
+</div>
+
+</div>
+
+
+
+<div class="carta" id="carta">
+
+
+<h1>Para alguien especial 💌</h1>
+
+
+<img src="Oso.jpg" class="foto">
+
+
+<div class="separador"></div>
+
+
+
+<p>
+Querida persona especial,
+</p>
+
+
+<p>
+No sabía exactamente cómo expresar todo lo que siento,
+así que decidí escribirte esta pequeña carta.
+</p>
+
+
+<p>
+Desde que llegaste a mi vida, hay momentos que se sienten
+diferentes. Me gusta tu forma de ser, tu sonrisa y la tranquilidad
+que transmites.
+</p>
+
+
+<p>
+Quiero seguir conociéndote, apoyarte, cuidarte y crear
+recuerdos bonitos juntos.
+</p>
+
+
+
+<h2>
+¿Quieres ser mi novia? 💍
+</h2>
+
+
+
+<div class="botones">
+
+
+<button id="si" onclick="guardarRespuesta('SI'); elegirRespuesta('SI')">
+❤️ Sí
+</button>
+
+
+<button id="no" onclick="guardarRespuesta('NO'); elegirRespuesta('NO')">
+💔 No
+</button>
+
+
+</div>
+
+
+
+<div id="respuesta"></div>
+
+
+
+
+<div class="comentarios">
+
+
+<h3>
+💭 Déjame un mensaje
+</h3>
+
+
+<textarea id="comentario" placeholder="Escribe algo bonito..."></textarea>
+
+
+<button id="guardar" onclick="guardarComentario()">
+Enviar comentario 💌
+</button>
+
+
+
+<div id="lista"></div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+<script type="module" src="firebase.js"></script>
+
+
+</body>
+
+</html>
