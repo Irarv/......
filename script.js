@@ -27,26 +27,28 @@ sello.addEventListener("click",()=>{
 
 window.elegirRespuesta = function(opcion){
 
+const respuesta=document.getElementById("respuesta");
 
-const respuesta = document.getElementById("respuesta");
+const si=document.getElementById("si");
 
+const no=document.getElementById("no");
 
-if(opcion === "SI"){
+si.classList.remove("seleccionado");
 
+no.classList.remove("seleccionado");
 
-respuesta.innerHTML =
-"❤️ Me hiciste muy feliz ❤️";
+if(opcion==="SI"){
 
+respuesta.innerHTML="❤️ Me hiciste muy feliz ❤️";
+
+si.classList.add("seleccionado");
 
 }else{
 
+respuesta.innerHTML="💔 Gracias por responder";
 
-respuesta.innerHTML =
-"💔 Gracias por responder";
-
+no.classList.add("seleccionado");
 
 }
-
-
 
 }
