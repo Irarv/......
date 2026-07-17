@@ -25,30 +25,32 @@ sello.addEventListener("click",()=>{
 
 // RESPUESTA SI / NO
 
-window.elegirRespuesta = function(opcion){
+window.guardarComentario = async function(){
 
-const respuesta=document.getElementById("respuesta");
+    const texto = document.getElementById("comentario").value;
 
-const si=document.getElementById("si");
+    if(texto.trim()==""){
+        alert("Escribe un mensaje ❤️");
+        return;
+    }
 
-const no=document.getElementById("no");
+    try{
 
-si.classList.remove("seleccionado");
+        const referencia = push(ref(db,"comentarios"));
 
-no.classList.remove("seleccionado");
+        await set(referencia,{
+            mensaje:texto,
+            fecha:new Date().toLocaleString()
+        });
 
-if(opcion==="SI"){
+        document.getElementById("comentario").value="";
 
-respuesta.innerHTML="❤️ Me hiciste muy feliz ❤️";
+        alert("Mensaje guardado 💌");
 
-si.classList.add("seleccionado");
+    }catch(error){
 
-}else{
+        console.error(error);
+        alert(error.message);
 
-respuesta.innerHTML="💔 Gracias por responder";
-
-no.classList.add("seleccionado");
-
-}
 
 }
